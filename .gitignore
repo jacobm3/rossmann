@@ -7,7 +7,6 @@
 .terraformrc
 terraform.rc
 
-*.log
 *.err
 *.debug
 *.pem
@@ -70,6 +69,4 @@ tf.plan.out
 
 *.swp
 *.xlsx
-*.csv
-*.out
 *.zip

@@ -1,0 +1,11 @@
+
+
+# generate list of videos
+yt-dlp --flat-playlist -J "https://www.youtube.com/@rossmanngroup" 2>&1 | tee channel_videos.json
+
+# video list with titles and urls
+jq -r '.entries[].entries[] | [ .title, .url ] | @csv' channel_videos.json > title,url.csv
+
+# video list with titles, descriptions, and urls
+jq -r '.entries[].entries[] | [ .title, .description, .url ] | @csv ' channel_videos.json > desc.csv
+
